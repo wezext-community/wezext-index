@@ -14,7 +14,7 @@
       "name": "wezfont",
       "display": "wezfont 字体选择器",
       "description": "TUI 里挑字体：主字体 + fallback 回退链，选中即写 ~/.wezterm-font.lua 并热重载 wezterm。",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "homepage": "https://github.com/wezext-community/wezfont",
       "source": {
         "repo": "https://github.com/wezext-community/wezfont",
@@ -24,7 +24,7 @@
         "asset": "wezfont-v{version}-x86_64-pc-windows-msvc.zip",
         "exe": "wezfont.exe",
         "url": "https://github.com/wezext-community/wezfont/releases/download/v{version}/{asset}",
-        "sha256": "38dbc0d2ccec9773b465650ca189e5ce043c2358ead44f478ba75d48519f1d5b"
+        "sha256": "7100b73753c7d88341a314c7b04a54471f1dea5d014432e92494aa8cfe12543d"
       },
       "keys": [
         {
@@ -39,7 +39,7 @@
       "name": "wezlauncher",
       "display": "wezlauncher 启动器",
       "description": "替代 wezterm 内置启动器的 TUI：切标签页、开新 shell（自动索引 WSL 发行版 + ~/.wezterm-ssh.txt 里的 SSH 条目）。",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "homepage": "https://github.com/wezext-community/wezlauncher",
       "source": {
         "repo": "https://github.com/wezext-community/wezlauncher",
@@ -49,7 +49,7 @@
         "asset": "wezlauncher-v{version}-x86_64-pc-windows-msvc.zip",
         "exe": "wezlauncher.exe",
         "url": "https://github.com/wezext-community/wezlauncher/releases/download/v{version}/{asset}",
-        "sha256": "a0f050d8a98f5d87585560988caf121e880bc740a0d1f9ec4967ac9518edfbc0"
+        "sha256": "5962f69838b558c95d0c0a1a165b4e139f368f001dc8be1ea845611bbf8042a2"
       },
       "keys": [
         {

@@ -2,7 +2,7 @@
   "name": "wezfont",
   "display": "wezfont 字体选择器",
   "description": "TUI 里挑字体：主字体 + fallback 回退链，选中即写 ~/.wezterm-font.lua 并热重载 wezterm。",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/wezext-community/wezfont",
   "source": {
     "repo": "https://github.com/wezext-community/wezfont",
@@ -12,7 +12,7 @@
     "asset": "wezfont-v{version}-x86_64-pc-windows-msvc.zip",
     "exe": "wezfont.exe",
     "url": "https://github.com/wezext-community/wezfont/releases/download/v{version}/{asset}",
-    "sha256": "38dbc0d2ccec9773b465650ca189e5ce043c2358ead44f478ba75d48519f1d5b"
+    "sha256": "7100b73753c7d88341a314c7b04a54471f1dea5d014432e92494aa8cfe12543d"
   },
   "keys": [
     {
