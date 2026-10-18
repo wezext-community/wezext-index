@@ -11,7 +11,8 @@
   "binary": {
     "asset": "wezlauncher-v{version}-x86_64-pc-windows-msvc.zip",
     "exe": "wezlauncher.exe",
-    "url": "https://github.com/wezext-community/wezlauncher/releases/download/v{version}/{asset}"
+    "url": "https://github.com/wezext-community/wezlauncher/releases/download/v{version}/{asset}",
+    "sha256": "a0f050d8a98f5d87585560988caf121e880bc740a0d1f9ec4967ac9518edfbc0"
   },
   "keys": [
     {
