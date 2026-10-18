@@ -1,9 +1,11 @@
 -- ============================================================
---  wezext 扩展示例（纯 Lua，没有可执行文件）
+--  wezext extension example (pure Lua, no executable)
 --
---  契约：返回一个 function(config, wezterm)，wezext 生成的
---        ~/.wezterm-ext.lua 会把它放进 apply 列表，主配置逐个调用。
---  作用：Ctrl+Shift+Y 在不透明 / 半透明之间切换当前窗口。
+--  Contract: return a function(config, wezterm). wezext puts it into the
+--  generated ~/.wezterm-ext.lua, and the main config calls each of them.
+--
+--  What it does: Ctrl+Shift+Y toggles the current window between opaque
+--  and translucent.
 -- ============================================================
 return function(config, wezterm)
   config.keys = config.keys or {}

@@ -1,7 +1,7 @@
 {
   "name": "wezfont",
-  "display": "wezfont 字体选择器",
-  "description": "TUI 里挑字体：主字体 + fallback 回退链，选中即写 ~/.wezterm-font.lua 并热重载 wezterm。",
+  "display": "wezfont - font picker",
+  "description": "TUI font picker: choose the main font and the fallback chain, applied to ~/.wezterm-font.lua with live preview.",
   "version": "0.1.1",
   "homepage": "https://github.com/wezext-community/wezfont",
   "source": {

@@ -1,7 +1,7 @@
 {
   "name": "wezlauncher",
-  "display": "wezlauncher 启动器",
-  "description": "替代 wezterm 内置启动器的 TUI：切标签页、开新 shell（自动索引 WSL 发行版 + ~/.wezterm-ssh.txt 里的 SSH 条目）。",
+  "display": "wezlauncher - launcher",
+  "description": "TUI launcher for WezTerm: switch tabs, spawn shells, and launch auto-detected WSL distributions or custom SSH entries.",
   "version": "0.1.2",
   "homepage": "https://github.com/wezext-community/wezlauncher",
   "source": {
