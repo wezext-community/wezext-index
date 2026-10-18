@@ -14,7 +14,7 @@
       "name": "wezfont",
       "display": "wezfont - font picker",
       "description": "TUI font picker: choose the main font and the fallback chain, applied to ~/.wezterm-font.lua with live preview.",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "homepage": "https://github.com/wezext-community/wezfont",
       "source": {
         "repo": "https://github.com/wezext-community/wezfont",
@@ -24,7 +24,7 @@
         "asset": "wezfont-v{version}-x86_64-pc-windows-msvc.zip",
         "exe": "wezfont.exe",
         "url": "https://github.com/wezext-community/wezfont/releases/download/v{version}/{asset}",
-        "sha256": "7100b73753c7d88341a314c7b04a54471f1dea5d014432e92494aa8cfe12543d"
+        "sha256": "d6c52feaa4c2c445e83d9c32da5e167cd9a7603f7d73dc176c81b47b81c09525"
       },
       "keys": [
         {
@@ -39,7 +39,7 @@
       "name": "wezlauncher",
       "display": "wezlauncher - launcher",
       "description": "TUI launcher for WezTerm: switch tabs, spawn shells, and launch auto-detected WSL distributions or custom SSH entries.",
-      "version": "0.1.2",
+      "version": "0.1.3",
       "homepage": "https://github.com/wezext-community/wezlauncher",
       "source": {
         "repo": "https://github.com/wezext-community/wezlauncher",
@@ -49,7 +49,7 @@
         "asset": "wezlauncher-v{version}-x86_64-pc-windows-msvc.zip",
         "exe": "wezlauncher.exe",
         "url": "https://github.com/wezext-community/wezlauncher/releases/download/v{version}/{asset}",
-        "sha256": "9d0cf3a7566ebb763fa9ebd646bf89818d836dfd250648ea97f8f1702c353365"
+        "sha256": "fc79efeea44d7001a8614b39b832b6855513564073348a898f8bbe215009f060"
       },
       "keys": [
         {
