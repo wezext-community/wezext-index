@@ -1,0 +1,22 @@
+name: check index
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate entries and regenerate
+        run: |
+          python3 tools/gen-index.py
+          git diff --exit-code index.json || {
+            echo "::error::index.json 与 index/*.json 不一致，请本地跑 python tools/gen-index.py 后提交"
+            exit 1
+          }

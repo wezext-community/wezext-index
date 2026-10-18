@@ -1,0 +1,81 @@
+name: update entry
+
+# 由扩展仓库在发布后触发：repository_dispatch，或手动 workflow_dispatch
+on:
+  repository_dispatch:
+    types: [ext-release]
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "扩展名（对应 index/<name>.json）"
+        required: true
+      version:
+        description: "新版本号，比如 0.1.1"
+        required: true
+      sha256:
+        description: "发布资产的 sha256（可留空）"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve inputs
+        id: in
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            echo "name=${{ github.event.client_payload.name }}" >> "$GITHUB_OUTPUT"
+            echo "version=${{ github.event.client_payload.version }}" >> "$GITHUB_OUTPUT"
+            echo "sha256=${{ github.event.client_payload.sha256 }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "name=${{ inputs.name }}" >> "$GITHUB_OUTPUT"
+            echo "version=${{ inputs.version }}" >> "$GITHUB_OUTPUT"
+            echo "sha256=${{ inputs.sha256 }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validate
+        run: |
+          name="${{ steps.in.outputs.name }}"
+          test -f "index/$name.json" || { echo "::error::index/$name.json 不存在"; exit 1; }
+          python3 tools/gen-index.py > /dev/null
+
+      - name: Bump version + sha256
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib
+          name = os.environ["EXT_NAME"]
+          version = os.environ["EXT_VERSION"]
+          sha = os.environ.get("EXT_SHA", "").strip()
+          p = pathlib.Path("index") / f"{name}.json"
+          d = json.loads(p.read_text(encoding="utf-8"))
+          d["version"] = version
+          if sha and isinstance(d.get("binary"), dict):
+              d["binary"]["sha256"] = sha
+          p.write_text(json.dumps(d, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+          print(f"{name} -> {version} sha256={sha or '(unchanged)'}")
+          PY
+        env:
+          EXT_NAME: ${{ steps.in.outputs.name }}
+          EXT_VERSION: ${{ steps.in.outputs.version }}
+          EXT_SHA: ${{ steps.in.outputs.sha256 }}
+
+      - name: Regenerate aggregate
+        run: python3 tools/gen-index.py
+
+      - name: Commit
+        run: |
+          git config user.name "wezext-bot"
+          git config user.email "wezext-bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "没有变化，跳过提交"
+          else
+            git commit -m "index: ${{ steps.in.outputs.name }} -> ${{ steps.in.outputs.version }}"
+            git push
+          fi

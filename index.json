@@ -2,6 +2,14 @@
   "schema": 1,
   "generated_by": "tools/gen-index.py",
   "extensions": {
+    "opacity-toggle": {
+      "name": "opacity-toggle",
+      "display": "窗口透明度开关",
+      "description": "纯 Lua 扩展示例：Ctrl+Shift+Y 在当前窗口的不透明 / 半透明之间切换，不需要任何可执行文件。",
+      "version": "1.0.0",
+      "homepage": "https://github.com/wezext-community/wezext-index/tree/main/lua",
+      "lua": "https://raw.githubusercontent.com/wezext-community/wezext-index/main/lua/opacity-toggle.lua"
+    },
     "wezfont": {
       "name": "wezfont",
       "display": "wezfont 字体选择器",
