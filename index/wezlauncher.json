@@ -1,0 +1,24 @@
+{
+  "name": "wezlauncher",
+  "display": "wezlauncher 启动器",
+  "description": "替代 wezterm 内置启动器的 TUI：切标签页、开新 shell（自动索引 WSL 发行版 + ~/.wezterm-ssh.txt 里的 SSH 条目）。",
+  "version": "0.1.0",
+  "homepage": "https://github.com/wezext-community/wezlauncher",
+  "source": {
+    "repo": "https://github.com/wezext-community/wezlauncher",
+    "crate": "wezlauncher"
+  },
+  "binary": {
+    "asset": "wezlauncher-v{version}-x86_64-pc-windows-msvc.zip",
+    "exe": "wezlauncher.exe",
+    "url": "https://github.com/wezext-community/wezlauncher/releases/download/v{version}/{asset}"
+  },
+  "keys": [
+    {
+      "key": "o",
+      "mods": "CTRL|SHIFT",
+      "args": [],
+      "hint": "TUI 启动器"
+    }
+  ]
+}
